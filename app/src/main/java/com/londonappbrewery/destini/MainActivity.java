@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity
         alert.setTitle("Restart Or Quit?");
         alert.setMessage("Do you wish to restart or quit?");
         alert.setCancelable(false);
-        alert.setPositiveButton("Restart", new DialogInterface.OnClickListener()
+        alert.setNegativeButton("Restart", new DialogInterface.OnClickListener()
         {
             @Override
             public void onClick(DialogInterface dialog, int which)
@@ -108,6 +108,14 @@ public class MainActivity extends AppCompatActivity
                 mButtonTop.setText(R.string.T1_Ans1);
                 mButtonBottom.setVisibility(View.VISIBLE);
                 mButtonBottom.setText(R.string.T1_Ans2);
+            }
+        });
+        alert.setPositiveButton("Quit", new DialogInterface.OnClickListener()
+        {
+            @Override
+            public void onClick(DialogInterface dialog, int which)
+            {
+                finish();
             }
         });
         alert.show();
